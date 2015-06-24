@@ -4,30 +4,31 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{252CE1C2-027A-4445-A3C2-E4D6C80A935A}</ProjectGuid>
+    <ProjectGuid>{A4DB5F18-F21C-48FD-80EA-FF27A281393C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Splat</RootNamespace>
     <AssemblyName>Splat</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\Net45\</OutputPath>
-    <IntermediateOutputPath>obj\Debug\Net45\</IntermediateOutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>Bin\Debug\Net40\</OutputPath>
+    <IntermediateOutputPath>obj\Debug\Net40\</IntermediateOutputPath>
+    <DefineConstants>TRACE;DEBUG;NET40</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\Net45\</OutputPath>
-    <IntermediateOutputPath>obj\Release\Net45\</IntermediateOutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>bin\Release\Net40\</OutputPath>
+    <IntermediateOutputPath>obj\Release\Net40\</IntermediateOutputPath>
+    <DefineConstants>TRACE;NET40</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -52,7 +53,6 @@
     <Compile Include="PointExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RectangleExtensions.cs" />
-    <Compile Include="ReflectionStubs.cs" />
     <Compile Include="ServiceLocation.cs" />
     <Compile Include="Logging.cs" />
     <Compile Include="MemoizingMRUCache.cs" />
@@ -67,7 +67,7 @@
     <Compile Include="Xaml\Rect.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

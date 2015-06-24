@@ -66,9 +66,11 @@ namespace Splat
                 if (dependencyObject != null) {
                     cachedInDesignModeResult = (bool)mInfo.Invoke(null, new object[] { Activator.CreateInstance(dependencyObject) });
                 }
+#if !NET40
             } else if ((type = Type.GetType("Windows.ApplicationModel.DesignMode, Windows, ContentType=WindowsRuntime", false)) != null) {
                 // check WinRT next
                 cachedInDesignModeResult = (bool)type.GetProperty("DesignModeEnabled").GetMethod.Invoke(null, null);
+#endif
             } else {
                 cachedInDesignModeResult = false;
             }

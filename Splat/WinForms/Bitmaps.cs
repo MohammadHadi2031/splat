@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Splat.WinForms
@@ -13,7 +9,7 @@ namespace Splat.WinForms
     {
         public Task<IBitmap> Load(Stream sourceStream, float? desiredWidth, float? desiredHeight)
         {
-            return Task.Run(() => {
+            return TaskEx.Run(() => {
                 var ret = new Bitmap(sourceStream);
 
                 if (desiredWidth != null) {
@@ -26,7 +22,7 @@ namespace Splat.WinForms
 
         public Task<IBitmap> LoadFromResource(string source, float? desiredWidth, float? desiredHeight)
         {
-            return Task.Run(() => {
+            return TaskEx.Run(() => {
                 var ret = new Bitmap(source);
 
                 if (desiredWidth != null) {
@@ -59,7 +55,7 @@ namespace Splat.WinForms
 
         public Task Save(CompressedBitmapFormat format, float quality, Stream target)
         {
-            return Task.Run(() => {
+            return TaskEx.Run(() => {
                 if (format == CompressedBitmapFormat.Jpeg) {
                     var jpgEncoder = GetEncoder(ImageFormat.Jpeg);
                     var encoderParams = new EncoderParameters(1);

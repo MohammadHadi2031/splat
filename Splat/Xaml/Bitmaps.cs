@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
@@ -18,7 +16,7 @@ namespace Splat
 #if SILVERLIGHT
             return Deployment.Current.Dispatcher.InvokeAsync(() => {
 #else
-            return Task.Run(() => {
+            return TaskEx.Run(() => {
 #endif
                 var ret = new BitmapImage();
 
@@ -45,7 +43,7 @@ namespace Splat
 #if SILVERLIGHT
             return Deployment.Current.Dispatcher.InvokeAsync(() => {
 #else
-            return Task.Run(() => {
+            return TaskEx.Run(() => {
 #endif
                 var ret = new BitmapImage();
                 withInit(ret, x => {
@@ -104,7 +102,7 @@ namespace Splat
 
         public Task Save(CompressedBitmapFormat format, float quality, Stream target)
         {
-            return Task.Run(() => {
+            return TaskEx.Run(() => {
 #if SILVERLIGHT
                 if (format == CompressedBitmapFormat.Png) {
                     throw new PlatformNotSupportedException("WP8 can't save PNGs.");
@@ -127,6 +125,7 @@ namespace Splat
             inner = null;
         }
     }
+
 
     public static class BitmapMixins
     {
