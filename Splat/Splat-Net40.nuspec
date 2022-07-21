@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Splat</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>icon.png</icon> -->
+    <projectUrl>https://github.com/MohammadHadi2031/splat.git</projectUrl>
+    <description>Splat</description>
+    <!-- <releaseNotes>Summary of changes made in this release of the package.</releaseNotes> -->
+    <copyright>$copyright$</copyright>
+    <!-- <tags>Tag1 Tag2</tags> -->
+    <repository type="git" url="https://github.com/MohammadHadi2031/splat.git"/>
+  </metadata>
+</package>
