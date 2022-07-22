@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+    <Version>1.6.2</Version>
+    <Title>SplatNet40</Title>
+    <PackageId>SplatNet40</PackageId>
+    <RepositoryUrl>https://github.com/MohammadHadi2031/splat.git</RepositoryUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Android\**" />
+    <Compile Remove="Cocoa\**" />
+    <Compile Remove="Colors\**" />
+    <Compile Remove="Points\**" />
+    <Compile Remove="Resources\**" />
+    <Compile Remove="WinRT\**" />
+    <EmbeddedResource Remove="Android\**" />
+    <EmbeddedResource Remove="Cocoa\**" />
+    <EmbeddedResource Remove="Colors\**" />
+    <EmbeddedResource Remove="Points\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <EmbeddedResource Remove="WinRT\**" />
+    <None Remove="Android\**" />
+    <None Remove="Cocoa\**" />
+    <None Remove="Colors\**" />
+    <None Remove="Points\**" />
+    <None Remove="Resources\**" />
+    <None Remove="WinRT\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ReflectionStubs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Splat-Net40.nuspec" />
+    <None Remove="Splat.1.6.2.nupkg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+</Project>
